@@ -21,7 +21,7 @@ Before running terragrunt commands, few parameters needs to be defined manually 
 * Google APIs key (you need to create credentials allowing working with Places API in Google developer console) 
   * /{stage}/google/api/key
 
-substitue {stage} with the environment name, e.g. test.
+substitute {stage} with the environment name, e.g. test.
 
 ## Installing
 
@@ -37,7 +37,7 @@ To deploy a single module, navigate to that module and run
 terragrunt apply
 ```
 
-for instance, to setup elasticsearch module in a test environement
+for instance, to setup elasticsearch module in a test environment
 ```
 non-prod/eu-central/test/elasticsearch/terragrunt apply
 ```
@@ -49,7 +49,7 @@ To check which resources will be created or change run
 non-prod/eu-central/test/terragrunt plan-all
 ```
 
-or invidually, on module basis
+or individually, on module basis
 ```
 non-prod/eu-central/test/elasticsearch/terragrunt plan
 ```
@@ -61,7 +61,7 @@ To destroy environment globally run
 non-prod/eu-central/test/terragrunt destroy-all
 ```
 
-or invidually, on module basis
+or individually, on module basis
 ```
 non-prod/eu-central/test/elasticsearch/terragrunt destroy
 ```
