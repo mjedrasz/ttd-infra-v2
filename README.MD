@@ -1,6 +1,6 @@
 # Things Todo infrastructure
 
-Terragrunt for [ttd_terraform](https://github.com/mjedrasz/ttd_terraform)
+Terragrunt for [ttd-terraform](https://github.com/mjedrasz/ttd-terraform)
 
 ## Getting Started
 
