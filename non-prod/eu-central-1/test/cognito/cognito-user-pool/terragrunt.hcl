@@ -23,8 +23,8 @@ inputs = {
   user_pool_domain                = "ttd"
   user_pool_name                  = "ttd"
   reply_to_email_address          = "team@ttd.pl"
-  user_verification_email_subject = "Twój kod weryfikacyjny w aplikacji Hop na miasto"
-  user_verification_email_message = "Cześć,<br/><br/>Twój kod weryfikacyjny to: {####}<br/><br/>Pozdrawiamy,<br/>Zespół aplikacji Hop na miasto"
+  user_verification_email_subject = "Your verification code"
+  user_verification_email_message = "Hi,<br/><br/>Your verification code: {####}<br/><br/>Regards,<br/>Team"
 
   org_pool_domain            = "org-ttd"
   org_pool_name              = "org-ttd"
