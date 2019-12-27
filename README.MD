@@ -44,7 +44,7 @@ non-prod/eu-central/test/elasticsearch/terragrunt apply
 
 ## Dry-run
 
-To check which resources will be created or change run
+To check which resources will be created or changed run
 ```
 non-prod/eu-central/test/terragrunt plan-all
 ```
