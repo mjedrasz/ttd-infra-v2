@@ -7,11 +7,11 @@
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
-  source = "git::git@github.com:mjedrasz/ttd_terraform.git//dynamodb?ref=v0.0.1"
+  source = "git::ssh://git-codecommit.eu-central-1.amazonaws.com/v1/repos/ttd-terraform.git//dynamodb"
 }
 # Include all settings from the root terraform.tfvars file
 include {
-  path = "${find_in_parent_folders()}"
+  path = find_in_parent_folders()
 }
 
 
@@ -23,8 +23,7 @@ include {
 inputs = {
   override_dynamodb_endpoint = ""
   table_name                 = "one-table"
-  read_capacity              = 12
-  write_capacity             = 12
+  billing_mode               = "PAY_PER_REQUEST"  
   range_key                  = "sk"
   hash_key                   = "id"
   attributes = [{ name = "id", type = "S" },

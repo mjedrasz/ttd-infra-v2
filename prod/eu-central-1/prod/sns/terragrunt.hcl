@@ -7,12 +7,12 @@
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
-  source = "git::git@github.com:mjedrasz/ttd_terraform.git//sns?ref=v0.0.1"
+  source = "git::ssh://git-codecommit.eu-central-1.amazonaws.com/v1/repos/ttd-terraform.git//sns"
 }
 
 # Include all settings from the root terraform.tfvars file
 include {
-  path = "${find_in_parent_folders()}"
+  path = find_in_parent_folders()
 }
 
 

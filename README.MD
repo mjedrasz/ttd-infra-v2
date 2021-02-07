@@ -25,10 +25,11 @@ substitute {stage} with the environment name, e.g. test.
 
 ## Installing
 
-You can install whole infrastructure for a given environment in one go executing 
+You can install the whole infrastructure for a given environment in one go executing, e.g.
 
 ```
-non-prod/eu-central/test/terragrunt apply-all
+cd non-prod/eu-central/test
+terragrunt apply-all
 ```
 
 To deploy a single module, navigate to that module and run
@@ -39,31 +40,45 @@ terragrunt apply
 
 for instance, to setup elasticsearch module in a test environment
 ```
-non-prod/eu-central/test/elasticsearch/terragrunt apply
+cd non-prod/eu-central/test/elasticsearch
+terragrunt apply
 ```
+
+## Without custom domain
+
+If you don't have a domain and/or you don't want to buy/setup one via Route53 service, you can exclude modules which relies on a domain name
+```
+terragrunt apply-all --terragrunt-exclude-dir route53 --terragrunt-exclude-dir ses
+```
+
+Withou a domain you access your static resources via Cloudfront-generated domain.
 
 ## Dry-run
 
 To check which resources will be created or changed run
 ```
-non-prod/eu-central/test/terragrunt plan-all
+cd non-prod/eu-central/test
+terragrunt plan-all
 ```
 
 or individually, on module basis
 ```
-non-prod/eu-central/test/elasticsearch/terragrunt plan
+cd non-prod/eu-central/test/elasticsearch
+terragrunt plan
 ```
 
 ## Destroying
 
 To destroy environment globally run
 ```
-non-prod/eu-central/test/terragrunt destroy-all
+cd non-prod/eu-central/test
+terragrunt destroy-all
 ```
 
 or individually, on module basis
 ```
-non-prod/eu-central/test/elasticsearch/terragrunt destroy
+cd non-prod/eu-central/test/elasticsearch
+terragrunt destroy
 ```
 
 ## License
