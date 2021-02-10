@@ -7,7 +7,7 @@
 
 
 dependencies {
-  paths = ["../cognito-user-pool", "../cognito-identity-provider"]
+  paths = ["../../cloudfront", "../cognito-user-pool", "../cognito-identity-provider"]
 }
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
