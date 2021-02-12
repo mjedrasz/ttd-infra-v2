@@ -23,7 +23,9 @@ include {
 inputs = {
   override_dynamodb_endpoint = ""
   table_name                 = "one-table"
-  billing_mode               = "PAY_PER_REQUEST"  
+  billing_mode               = "PROVISIONED" #"PAY_PER_REQUEST"
+  read_capacity              = 20
+  write_capacity             = 20
   range_key                  = "sk"
   hash_key                   = "id"
   attributes = [{ name = "id", type = "S" },

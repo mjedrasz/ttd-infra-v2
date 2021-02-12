@@ -28,3 +28,51 @@ terraform {
     ]
   }
 }
+
+generate "common_variables" {
+  path = "common-vars.tf"
+  if_exists = "overwrite_terragrunt"
+  contents = <<EOF
+variable "aws_region" {
+  description = "The AWS region to deploy to (e.g. us-east-1)"
+}
+
+variable "aws_env" {
+  description = "The AWS environemtn to deploy to (e.g. dev)"
+}
+
+variable "default_tags" {
+  type    = map
+  default = {}
+}
+
+EOF
+}
+
+generate "versions" {
+  path = "versions.tf"
+  if_exists = "skip"
+  contents = <<EOF
+terraform {
+  required_providers {
+    aws = {}
+    template = {}
+  }
+  required_version = ">= 0.13"
+}
+
+EOF
+}
+
+generate "provider" {
+  path = "provider.tf"
+  if_exists = "skip"
+  contents = <<EOF
+provider "template" {
+}
+
+provider "aws" {
+  region  = var.aws_region
+}
+EOF
+}

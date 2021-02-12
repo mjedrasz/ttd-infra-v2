@@ -22,6 +22,7 @@ include {
 inputs = {
   override_dynamodb_endpoint = "http://localhost:4569"
   table_name                 = "one-table"
+  billing_mode               = "PROVISIONED" #"PAY_PER_REQUEST"
   read_capacity              = 1
   write_capacity             = 1
   range_key                  = "sk"
