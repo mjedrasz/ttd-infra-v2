@@ -4,6 +4,10 @@
 # practices: https://github.com/gruntwork-io/terragrunt
 # ---------------------------------------------------------------------------------------------------------------------
 
+dependencies {
+  paths = ["../../cloudfront/user"]
+}
+
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
@@ -25,8 +29,9 @@ dependency "cloudfront" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 inputs = {
+  public_hosted_zone          = "ttd.pl."
   name                        = "user"
-  cname                       = "test-user.ttd.pl"
+  cname                       = "www.ttd.pl"
   distribution_domain_name    = dependency.cloudfront.outputs.distribution_domain_name
   distribution_hosted_zone_id = dependency.cloudfront.outputs.distribution_hosted_zone_id
 

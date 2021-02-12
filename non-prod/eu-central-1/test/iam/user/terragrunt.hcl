@@ -4,10 +4,14 @@
 # practices: https://github.com/gruntwork-io/terragrunt
 # ---------------------------------------------------------------------------------------------------------------------
 
+dependencies {
+  paths = ["../../cognito/cognito-identity-pool/user", "../../pinpoint"]
+}
+
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
-  source = "git::ssh://git-codecommit.eu-central-1.amazonaws.com/v1/repos/ttd-terraform.git//iam/user"
+  source = "git::ssh://git-codecommit.eu-central-1.amazonaws.com/v1/repos/ttd-terraform.git//iam"
 }
 
 # Include all settings from the root terraform.tfvars file

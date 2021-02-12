@@ -24,5 +24,5 @@ include {
 
 inputs = {
   domain = "ttd"
-  elasticsearch_version = "7.1"
+  elasticsearch_version = "7.9"
 }

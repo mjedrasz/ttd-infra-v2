@@ -15,7 +15,6 @@ include {
   path = find_in_parent_folders()
 }
 
-
 # ---------------------------------------------------------------------------------------------------------------------
 # MODULE PARAMETERS
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above

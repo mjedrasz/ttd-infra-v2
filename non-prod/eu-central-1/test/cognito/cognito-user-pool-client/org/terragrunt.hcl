@@ -4,7 +4,9 @@
 # practices: https://github.com/gruntwork-io/terragrunt
 # ---------------------------------------------------------------------------------------------------------------------
 
-
+dependencies {
+  paths = ["../../../cloudfront/org", "../../cognito-user-pool/org"]
+}
 
 # dependencies {
 #   paths = ["../../cloudfront", "../cognito-user-pool", "../cognito-identity-provider"]
