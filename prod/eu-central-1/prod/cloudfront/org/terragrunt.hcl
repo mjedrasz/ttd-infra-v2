@@ -34,7 +34,6 @@ inputs = {
   origin_access_identity = dependency.s3_bucket.outputs.cloudfront_access_identity_path
   target_origin_id       = dependency.s3_bucket.outputs.bucket_domain_name
   name                   = "org"
-  domain                 = "ttd.pl"
   aliases                = ["www.organiser.ttd.pl"]
 }
 

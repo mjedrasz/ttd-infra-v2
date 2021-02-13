@@ -23,6 +23,4 @@ include {
 
 inputs = { 
   aws_ses_region     = "eu-west-1"
-  domain             = "ttd.pl"
-  public_hosted_zone = "ttd.pl."
 }

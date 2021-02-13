@@ -76,3 +76,8 @@ provider "aws" {
 }
 EOF
 }
+
+inputs = {
+  public_hosted_zone  = "ttd.pl."
+  dns_domain             = "ttd.pl"
+}

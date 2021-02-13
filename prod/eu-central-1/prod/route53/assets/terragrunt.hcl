@@ -29,7 +29,6 @@ dependency "cloudfront" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 inputs = {
-  public_hosted_zone          = "ttd.pl."
   name                        = "assets"
   cname                       = "assets.ttd.pl"
   distribution_domain_name    = dependency.cloudfront.outputs.distribution_domain_name

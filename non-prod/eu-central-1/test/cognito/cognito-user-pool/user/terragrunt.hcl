@@ -22,7 +22,6 @@ include {
 inputs = {
   domain                     = "user-ttd"
   name                       = "user"
-  reply_to_email_address     = "team@ttd.pl"
   verification_email_subject = "Your verification code"
   verification_email_message = "Hi,<br/><br/>Your verification code: {####}<br/><br/>Regards,<br/>Team"
 }
