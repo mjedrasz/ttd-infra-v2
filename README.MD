@@ -21,6 +21,9 @@ Before running terragrunt commands, few parameters needs to be defined manually 
 * Google APIs key (you need to create credentials allowing working with Places API in Google developer console)
   * /{stage}/google/api/key
 
+* Verified e-mail address source ARN (e-mail used as a reply-to address in Cognito user pools when using SES service instead of default Cognito for sending Cognito-related e-mails). E-mail verification needs to be performed manually.
+  * /{stage}/ses/verified-email/arn
+
 substitute {stage} with the environment name, e.g. test.
 
 ## Installing
@@ -48,6 +51,7 @@ terragrunt apply
 ## Without custom domain
 
 If you don't have a domain and/or you don't want to buy/setup one via Route53 service, you can exclude modules which relies on a domain name
+('route53' and 'ses' modules are not included in the test environment)
 
 ```bash
 terragrunt apply-all --terragrunt-exclude-dir "route53/*" --terragrunt-exclude-dir ses
@@ -64,7 +68,7 @@ cd non-prod/eu-central/test
 terragrunt plan-all
 ```
 
-or individually, on module basis
+or individually, on a module basis
 
 ```bash
 cd non-prod/eu-central/test/elasticsearch

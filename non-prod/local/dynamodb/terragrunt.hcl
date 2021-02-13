@@ -20,7 +20,7 @@ include {
 # ---------------------------------------------------------------------------------------------------------------------
 
 inputs = {
-  override_dynamodb_endpoint = "http://localhost:4569"
+  override_dynamodb_endpoint = "http://localhost:4566"
   table_name                 = "one-table"
   billing_mode               = "PROVISIONED" #"PAY_PER_REQUEST"
   read_capacity              = 1
