@@ -22,12 +22,21 @@ include {
 
 dependency "cognito_user_pool" {
   config_path = "${get_terragrunt_dir()}/../../cognito-user-pool/user"
+  mock_outputs = {
+    user_pool_id              = "user_user_pool_id"
+  }
+  mock_outputs_allowed_terraform_commands = ["validate", "plan"]
 }
 
 
 dependency "cognito_user_pool_client" {
   config_path = "${get_terragrunt_dir()}/../../cognito-user-pool-client/user"
+  mock_outputs = {
+    user_pool_client_id              = "user_pool_client_id"
+  }
+  mock_outputs_allowed_terraform_commands = ["validate", "plan"]
 }
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 # MODULE PARAMETERS

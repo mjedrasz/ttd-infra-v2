@@ -77,7 +77,8 @@ provider "aws" {
 EOF
 }
 
+# fill in if you want to have a custom domain
 inputs = {
-  public_hosted_zone  = "ttd.pl."
-  dns_domain             = "ttd.pl"
+  public_hosted_zone  = "" # e.g. "ttd.pl."
+  dns_domain          = "" # e.g. "ttd.pl"
 }

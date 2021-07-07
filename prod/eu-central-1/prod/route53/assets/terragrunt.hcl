@@ -21,6 +21,12 @@ include {
 
 dependency "cloudfront" {
   config_path = "${get_terragrunt_dir()}/../../cloudfront/assets"
+
+  mock_outputs = {
+    distribution_domain_name    = "ttd-assets-domain-name"
+    distribution_hosted_zone_id = "ttd-zone-id"
+  }
+  mock_outputs_allowed_terraform_commands = ["validate", "plan"]
 }
 
 # ---------------------------------------------------------------------------------------------------------------------

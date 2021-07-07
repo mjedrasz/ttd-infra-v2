@@ -22,10 +22,20 @@ include {
 
 dependency "cloudfront" {
   config_path = "${get_terragrunt_dir()}/../../../cloudfront/org"
+
+  mock_outputs = {
+    distribution_domain_name = "ord-dist"
+  }
+  mock_outputs_allowed_terraform_commands = ["validate", "plan"]
 }
 
 dependency "cognito_user_pool" {
   config_path = "${get_terragrunt_dir()}/../../cognito-user-pool/org"
+
+  mock_outputs = {
+    user_pool_id = "org-user-pool-id"
+  }
+  mock_outputs_allowed_terraform_commands = ["validate", "plan"]
 }
 
 # ---------------------------------------------------------------------------------------------------------------------

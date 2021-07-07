@@ -21,6 +21,12 @@ include {
 
 dependency "s3_bucket" {
   config_path = "${get_terragrunt_dir()}/../../s3/org"
+
+  mock_outputs = {
+    bucket_domain_name              = "org-ttd"
+    cloudfront_access_identity_path = "org-aip"
+  }
+  mock_outputs_allowed_terraform_commands = ["validate", "plan"]
 }
 
 # ---------------------------------------------------------------------------------------------------------------------

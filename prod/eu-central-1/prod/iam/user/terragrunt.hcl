@@ -21,10 +21,20 @@ include {
 
 dependency "cognito_identity_pool" {
   config_path = "${get_terragrunt_dir()}/../../cognito/cognito-identity-pool/user"
+
+  mock_outputs = {
+    identity_pool_id = "user-identity-pool-id"
+  }
+  mock_outputs_allowed_terraform_commands = ["validate", "plan"]
 }
 
 dependency "pinpoint" {
   config_path = "${get_terragrunt_dir()}/../../pinpoint"
+
+  mock_outputs = {
+    application_id = "user-pinpoint-application-id"
+  }
+  mock_outputs_allowed_terraform_commands = ["validate", "plan"]
 }
 
 # ---------------------------------------------------------------------------------------------------------------------

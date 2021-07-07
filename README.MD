@@ -32,7 +32,7 @@ You can install the whole infrastructure for a given environment in one go execu
 
 ```bash
 cd non-prod/eu-central/test
-terragrunt apply-all
+terragrunt run-all apply
 ```
 
 To deploy a single module, navigate to that module and run
@@ -48,16 +48,16 @@ cd non-prod/eu-central/test/elasticsearch
 terragrunt apply
 ```
 
-## Without custom domain
+## Without a custom domain
 
 If you don't have a domain and/or you don't want to buy/setup one via Route53 service, you can exclude modules which relies on a domain name
-('route53' and 'ses' modules are not included in the test environment)
+(`route53` and `ses` modules are not included in the test environment)
 
 ```bash
-terragrunt apply-all --terragrunt-exclude-dir "route53/*" --terragrunt-exclude-dir ses
+terragrunt run-all apply --terragrunt-exclude-dir "route53/*" --terragrunt-exclude-dir ses
 ```
 
-Withou a domain you access your static resources via Cloudfront-generated domain.
+Without a custom domain you access your static resources via Cloudfront-generated domain.
 
 ## Dry-run
 
@@ -65,7 +65,7 @@ To check which resources will be created or changed run
 
 ```bash
 cd non-prod/eu-central/test
-terragrunt plan-all
+terragrunt run-all plan
 ```
 
 or individually, on a module basis
@@ -81,7 +81,7 @@ To destroy environment globally run
 
 ```bash
 cd non-prod/eu-central/test
-terragrunt destroy-all
+terragrunt run-all destroy
 ```
 
 or individually, on module basis

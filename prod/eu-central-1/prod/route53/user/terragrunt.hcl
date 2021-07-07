@@ -21,6 +21,11 @@ include {
 
 dependency "cloudfront" {
   config_path = "${get_terragrunt_dir()}/../../cloudfront/user"
+
+  mock_outputs = {
+    distribution_domain_name    = "ttd-user-domain-name"
+    distribution_hosted_zone_id = "ttd-zone-id"
+  }
 }
 
 # ---------------------------------------------------------------------------------------------------------------------

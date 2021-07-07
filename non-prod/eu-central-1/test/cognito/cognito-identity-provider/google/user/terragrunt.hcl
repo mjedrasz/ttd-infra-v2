@@ -21,6 +21,11 @@ include {
 
 dependency "cognito_user_pool" {
   config_path = "${get_terragrunt_dir()}/../../../cognito-user-pool/user"
+  
+  mock_outputs = {
+    user_pool_id              = "user_user_pool_id"
+  }
+  mock_outputs_allowed_terraform_commands = ["validate", "plan"]
 }
 # ---------------------------------------------------------------------------------------------------------------------
 # MODULE PARAMETERS
