@@ -1,6 +1,6 @@
 # Things Todo infrastructure
 
-Terragrunt for [ttd-terraform](https://github.com/mjedrasz/ttd-terraform)
+Terragrunt for [ttd-terraform-v2](https://github.com/mjedrasz/ttd-terraform-v2). It's a revisited [ttd-infra](https://github.com/mjedrasz/ttd-infra) with a new approach to modules and dependencies between modules (s3 shared state replaced by `dependency` blocks).
 
 ## Getting Started
 
